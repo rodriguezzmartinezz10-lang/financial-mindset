@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/social.css">
     <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/language.css">
     
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -54,12 +55,17 @@
                 <img src="recursos/logo.jpg" alt="Logo" class="navbar-logo">
             </div>
             <div class="navbar-links">
-                <a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a>
-                <a href="#servicios" class="nav-link">Servicios</a>
-                <a href="#mercados" class="nav-link">Mercados</a>
-                <a href="#testimonios" class="nav-link">Testimonios</a>
+                <a href="#sobre-nosotros" class="nav-link" data-i18n="nav-about">Sobre Nosotros</a>
+                <a href="#servicios" class="nav-link" data-i18n="nav-programs">Servicios</a>
+                <a href="#mercados" class="nav-link" data-i18n="nav-markets">Mercados</a>
+                <a href="#testimonios" class="nav-link" data-i18n="nav-testimonials">Testimonios</a>
                 <a href="#redes" class="nav-link">Redes Sociales</a>
-                <a href="#contacto" class="nav-link contact-link">Contacto</a>
+                <a href="#contacto" class="nav-link contact-link" data-i18n="nav-contact">Contacto</a>
+                <div class="language-selector">
+                    <button class="language-btn active" data-lang="es" onclick="changeLanguage('es')">ES</button>
+                    <span>|</span>
+                    <button class="language-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -492,6 +498,8 @@
             }
         };
     </script>
+    <script src="js/translations.js"></script>
+    <script src="js/language.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
