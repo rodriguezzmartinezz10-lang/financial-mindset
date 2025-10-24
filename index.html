@@ -25,15 +25,17 @@
     <meta property="twitter:description" content="Domina el trading profesional con IA. Academia líder en formación de traders con más de 14 años de experiencia.">
     <meta property="twitter:image" content="recursos/logo.jpg">
     
-    <!-- Fuentes -->
+    <!-- Preload recursos críticos y fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Estilos -->
+    <!-- Estilos críticos -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    
+    <!-- Estilos no críticos con carga diferida -->
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/navbar.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/programs.css">
     <link rel="stylesheet" href="css/markets.css">
     <link rel="stylesheet" href="css/testimonials.css">
@@ -65,7 +67,7 @@
     <!-- Hero Section con Video -->
     <header class="hero">
         <div class="hero-overlay"></div>
-        <video autoplay muted loop playsinline class="hero-background">
+        <video autoplay muted loop playsinline class="hero-background" preload="auto" poster="recursos/hero-poster.jpg">
             <source src="recursos/hero-background.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
