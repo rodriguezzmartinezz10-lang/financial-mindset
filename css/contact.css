@@ -1,0 +1,327 @@
+/* Estilos para la sección Comienza Tu Viaje */
+.contact-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* Formulario de contacto */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(44, 44, 108, 0.2);
+}
+
+/* Estilos para el contenedor del teléfono */
+.phone-input-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.country-select {
+    flex: 0 0 auto;
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.phone-input {
+    flex: 1;
+    width: auto !important;
+}
+
+/* Personalización del select */
+.country-select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(44, 44, 108, 0.2);
+}
+
+/* Estilo para opciones del select */
+.country-select option {
+    padding: 10px;
+    background-color: white;
+    color: #333;
+}
+
+/* Estilos para la notificación */
+.form-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: translateX(120%);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.form-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.form-notification.hidden {
+    display: none;
+}
+
+.notification-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.notification-icon {
+    background-color: #ffd700;
+    color: #1a1a1a;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.notification-content h3 {
+    margin: 0 0 10px 0;
+    color: #ffd700;
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .phone-input-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .country-select {
+        width: 100%;
+    }
+
+    .form-notification {
+        top: auto;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        transform: translateY(120%);
+    }
+
+    .form-notification.show {
+        transform: translateY(0);
+    }
+}
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-content {
+    padding-right: 2rem;
+}
+
+.contact-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.contact-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.contact-features {
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.feature-item i {
+    color: var(--primary);
+    margin-right: 1rem;
+    font-size: 1.4rem;
+}
+
+.contact-form {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
+}
+
+.contact-decoration {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--primary), transparent);
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.decoration-1 {
+    top: -150px;
+    right: -150px;
+}
+
+.decoration-2 {
+    bottom: -150px;
+    left: -150px;
+}
+
+/* WhatsApp flotante mejorado */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-float i {
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover i {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .contact-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .feature-item {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,178 @@
+/* Estilos para la sección de Servicios y Programas */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.program-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.program-header {
+    background: var(--primary);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.program-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.program-toggle {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.program-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.program-content.active {
+    max-height: none;
+    opacity: 1;
+    visibility: visible;
+}
+
+.program-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.program-item {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem 2rem 2rem 4rem;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    counter-increment: program-counter;
+    color: #1a1a1a;
+    font-weight: 500;
+    border: none;
+    will-change: transform, box-shadow;
+}
+
+.program-item::after {
+    content: counter(program-counter);
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #333, #666);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+.program-content {
+    counter-reset: program-counter;
+}
+
+.program-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.25;
+    transition: all 0.4s ease;
+}
+
+.program-item:nth-child(3n+1)::before {
+    background: linear-gradient(135deg, 
+        rgba(76, 175, 80, 0.6) 0%, 
+        rgba(69, 160, 73, 0.5) 50%, 
+        rgba(56, 142, 60, 0.55) 100%);
+}
+
+.program-item:nth-child(3n+2)::before {
+    background: linear-gradient(135deg, 
+        rgba(33, 150, 243, 0.6) 0%, 
+        rgba(25, 118, 210, 0.5) 50%, 
+        rgba(21, 101, 192, 0.55) 100%);
+}
+
+.program-item:nth-child(3n+3)::before {
+    background: linear-gradient(135deg, 
+        rgba(156, 39, 176, 0.6) 0%, 
+        rgba(123, 31, 162, 0.5) 50%, 
+        rgba(106, 27, 154, 0.55) 100%);
+}
+
+.program-item:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 12px 12px 30px rgba(0,0,0,0.2);
+}
+
+.program-item:hover::before {
+    opacity: 0.7;
+}
+
+.program-item > * {
+    position: relative;
+    z-index: 2;
+}
+
+.program-content.active {
+    max-height: none;
+    opacity: 1;
+    visibility: visible;
+    padding: 1.5rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+}
